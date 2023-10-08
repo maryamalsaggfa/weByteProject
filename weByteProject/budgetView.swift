@@ -6,12 +6,46 @@
 //
 
 import SwiftUI
+import SlidingTabView
 
 struct budgetView: View {
+    @State private var tabIndex=0
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            ZStack (alignment: .top){
+                VStack{
+                    Image("Image")
+                        .frame(width:0, height: 0)
+                    //Spacer()
+                        .aspectRatio(contentMode: .fit).ignoresSafeArea()
+                }
+                Text("الخطة المالية")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .font(.system(size: 24))
+                    .foregroundColor(.white)
+                //.padding(.bottom,54) // don't ever change the size
+            }
+            VStack{
+                SlidingTabView(selection: $tabIndex, tabs: ["الميزانية","خريطة الطريق"], animation:.easeOut)
+                Spacer().frame(height:50)
+                if tabIndex == 0{
+                    budgetCradView()
+                }else if tabIndex == 1{
+                    roadmapView()
+                }
+            }
+           
+          
+            
+        
+          
+        }
+            
+        .edgesIgnoringSafeArea(.all)
+        .padding(.top,10)
     }
 }
+
 
 #Preview {
     budgetView()

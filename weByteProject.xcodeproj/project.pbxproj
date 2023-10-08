@@ -11,6 +11,11 @@
 		5CD8FBA52AD2F443007709AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8FBA42AD2F443007709AD /* ContentView.swift */; };
 		5CD8FBA72AD2F444007709AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD8FBA62AD2F444007709AD /* Assets.xcassets */; };
 		5CD8FBAA2AD2F444007709AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD8FBA92AD2F444007709AD /* Preview Assets.xcassets */; };
+		5CD8FBB12AD30725007709AD /* budgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8FBB02AD30725007709AD /* budgetView.swift */; };
+		5CD8FBB32AD30BAA007709AD /* categoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8FBB22AD30BAA007709AD /* categoriesView.swift */; };
+		5CD8FBB72AD319BA007709AD /* budgetCradView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8FBB62AD319BA007709AD /* budgetCradView.swift */; };
+		5CD8FBB92AD319F4007709AD /* roadmapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8FBB82AD319F4007709AD /* roadmapView.swift */; };
+		5CD8FBBC2AD31EE5007709AD /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 5CD8FBBB2AD31EE5007709AD /* SlidingTabView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,10 @@
 		5CD8FBA42AD2F443007709AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5CD8FBA62AD2F444007709AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CD8FBA92AD2F444007709AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5CD8FBB02AD30725007709AD /* budgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = budgetView.swift; sourceTree = "<group>"; };
+		5CD8FBB22AD30BAA007709AD /* categoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriesView.swift; sourceTree = "<group>"; };
+		5CD8FBB62AD319BA007709AD /* budgetCradView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = budgetCradView.swift; sourceTree = "<group>"; };
+		5CD8FBB82AD319F4007709AD /* roadmapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roadmapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CD8FBBC2AD31EE5007709AD /* SlidingTabView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +63,10 @@
 			children = (
 				5CD8FBA22AD2F443007709AD /* weByteProjectApp.swift */,
 				5CD8FBA42AD2F443007709AD /* ContentView.swift */,
+				5CD8FBB22AD30BAA007709AD /* categoriesView.swift */,
+				5CD8FBB02AD30725007709AD /* budgetView.swift */,
+				5CD8FBB82AD319F4007709AD /* roadmapView.swift */,
+				5CD8FBB62AD319BA007709AD /* budgetCradView.swift */,
 				5CD8FBA62AD2F444007709AD /* Assets.xcassets */,
 				5CD8FBA82AD2F444007709AD /* Preview Content */,
 			);
@@ -83,6 +97,9 @@
 			dependencies = (
 			);
 			name = weByteProject;
+			packageProductDependencies = (
+				5CD8FBBB2AD31EE5007709AD /* SlidingTabView */,
+			);
 			productName = weByteProject;
 			productReference = 5CD8FB9F2AD2F443007709AD /* weByteProject.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +128,9 @@
 				Base,
 			);
 			mainGroup = 5CD8FB962AD2F443007709AD;
+			packageReferences = (
+				5CD8FBBA2AD31EE5007709AD /* XCRemoteSwiftPackageReference "SlidingTabView" */,
+			);
 			productRefGroup = 5CD8FBA02AD2F443007709AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +157,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CD8FBB32AD30BAA007709AD /* categoriesView.swift in Sources */,
+				5CD8FBB92AD319F4007709AD /* roadmapView.swift in Sources */,
 				5CD8FBA52AD2F443007709AD /* ContentView.swift in Sources */,
+				5CD8FBB72AD319BA007709AD /* budgetCradView.swift in Sources */,
 				5CD8FBA32AD2F443007709AD /* weByteProjectApp.swift in Sources */,
+				5CD8FBB12AD30725007709AD /* budgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +366,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5CD8FBBA2AD31EE5007709AD /* XCRemoteSwiftPackageReference "SlidingTabView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/QuynhNguyen/SlidingTabView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5CD8FBBB2AD31EE5007709AD /* SlidingTabView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CD8FBBA2AD31EE5007709AD /* XCRemoteSwiftPackageReference "SlidingTabView" */;
+			productName = SlidingTabView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5CD8FB972AD2F443007709AD /* Project object */;
 }

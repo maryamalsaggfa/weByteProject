@@ -9,7 +9,15 @@ import SwiftUI
 
 struct roadmapView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+           
+            Image("roadmap")
+                .resizable().aspectRatio(contentMode:.fill)
+                .frame(width:70,height:70)
+                .cornerRadius(15)
+            
+            
+        }
     }
 }
 
