@@ -9,7 +9,7 @@ import SwiftUI
 struct budgetCradView: View {
     
     
-    @State var  charctarState = "angry"
+    @State var  charctarState = ""
     //////
     //////
    
@@ -26,6 +26,9 @@ struct budgetCradView: View {
                     .foregroundColor(Color(hex:"F1E2A3"))
                     .padding(.leading,170)
                 Image("mainCharctar")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
                     .padding(.top,50)
                 VStack{
                      Text("مصروفاتك")
@@ -59,6 +62,9 @@ struct budgetCradView: View {
                     .foregroundColor(Color(hex:"02B78B"))
                     .padding(.leading,170)
                 Image("happy")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
                     .padding(.top,50)
                 VStack{
                     Text("مصروفاتك")
@@ -97,6 +103,9 @@ struct budgetCradView: View {
                     .foregroundColor(Color(hex:"FFFF00"))
                     .padding(.leading,170)
                 Image("sad")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
                     .padding(.top,50)
                 VStack{
                     Text("مصروفاتك")
@@ -133,6 +142,9 @@ struct budgetCradView: View {
                     .foregroundColor(Color(hex:"FD3E3E"))
                     .padding(.leading,170)
                 Image("angry")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
                     .padding(.top,50)
                 VStack{
                     Text("مصروفاتك")
@@ -158,7 +170,6 @@ struct budgetCradView: View {
                 .padding(.leading,190)
                 .padding(.top,30)
                 Spacer()
-                
             }
          
             

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C2546632AD3F83C008E51A4 /* fillingInfoFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2546622AD3F83C008E51A4 /* fillingInfoFunction.swift */; };
 		5CD8FBA32AD2F443007709AD /* weByteProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8FBA22AD2F443007709AD /* weByteProjectApp.swift */; };
 		5CD8FBA52AD2F443007709AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8FBA42AD2F443007709AD /* ContentView.swift */; };
 		5CD8FBA72AD2F444007709AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD8FBA62AD2F444007709AD /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C2546622AD3F83C008E51A4 /* fillingInfoFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fillingInfoFunction.swift; sourceTree = "<group>"; };
 		5CD8FB9F2AD2F443007709AD /* weByteProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weByteProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD8FBA22AD2F443007709AD /* weByteProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weByteProjectApp.swift; sourceTree = "<group>"; };
 		5CD8FBA42AD2F443007709AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				5CD8FBB02AD30725007709AD /* budgetView.swift */,
 				5CD8FBB82AD319F4007709AD /* roadmapView.swift */,
 				5CD8FBB62AD319BA007709AD /* budgetCradView.swift */,
+				5C2546622AD3F83C008E51A4 /* fillingInfoFunction.swift */,
 				5CD8FBA62AD2F444007709AD /* Assets.xcassets */,
 				5CD8FBA82AD2F444007709AD /* Preview Content */,
 			);
@@ -159,6 +162,7 @@
 			files = (
 				5CD8FBB32AD30BAA007709AD /* categoriesView.swift in Sources */,
 				5CD8FBB92AD319F4007709AD /* roadmapView.swift in Sources */,
+				5C2546632AD3F83C008E51A4 /* fillingInfoFunction.swift in Sources */,
 				5CD8FBA52AD2F443007709AD /* ContentView.swift in Sources */,
 				5CD8FBB72AD319BA007709AD /* budgetCradView.swift in Sources */,
 				5CD8FBA32AD2F443007709AD /* weByteProjectApp.swift in Sources */,
