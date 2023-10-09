@@ -6,46 +6,168 @@
 //
 
 import SwiftUI
-
 struct budgetCradView: View {
+    
+    
+    @State var  charctarState = "angry"
+    //////
+    //////
+   
     var body: some View {
         ZStack(alignment:.top){
-            Rectangle()
-                .foregroundColor(Color(hex:"FBF7AB"))
-                .frame(width: 331,height: 198)
-            Rectangle()
-                .frame(width:161,height:198)
-                .foregroundColor(Color(hex:"F1E2A3"))
-                .padding(.leading,170)
-            Image("mainCharctar")
-                .padding(.top,50)
-            VStack{
-                Text("مصروفاتك")
-                    .font(.system(size: 15))
+            
+            
+            if charctarState == ""{
+                Rectangle()
+                    .foregroundColor(Color(hex:"FBF7AB"))
+                    .frame(width: 331,height: 198).shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                Rectangle()
+                    .frame(width:161,height:198)
+                    .foregroundColor(Color(hex:"F1E2A3"))
+                    .padding(.leading,170)
+                Image("mainCharctar")
+                    .padding(.top,50)
                 VStack{
-                    Spacer().frame(height: 20)
-                    Text("صفر 💰").bold()
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        .font(.system(size: 15))
-                    Spacer().frame(height: 20)
-                    //Image("")
-                }
-                Text("الميزانيه الشهرية")
-                    .font(.system(size: 13))
-                Spacer().frame(height: 20)
-                Text("٤٠٠٠ ريال ")
-                    .font(.system(size: 12))
+                     Text("مصروفاتك")
+                         .font(.system(size: 15))
+                     VStack{
+                         Spacer().frame(height: 20)
+                         Text("صفر 💰").bold()
+                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                             .font(.system(size: 15))
+                         Spacer().frame(height: 20)
+                         //Image("")
+                     }
+                     Text("الميزانيه الشهرية")
+                         .font(.system(size: 13))
+                     Spacer().frame(height: 20)
+                     Text("٤٠٠٠ ريال ")
+                         .font(.system(size: 12))
+                 }
+                 .padding(.leading,190)
+                 .padding(.top,30)
+                 Spacer()
             }
-            .padding(.leading,190)
-            .padding(.top,30)
-            Spacer()
+            
+            
+            else if charctarState == "happy"{
+                Rectangle()
+                    .foregroundColor(.white)
+                    .frame(width: 331,height: 198).shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                Rectangle()
+                    .frame(width:161,height:198)
+                    .foregroundColor(Color(hex:"02B78B"))
+                    .padding(.leading,170)
+                Image("happy")
+                    .padding(.top,50)
+                VStack{
+                    Text("مصروفاتك")
+                        .foregroundColor(.white)
+                        .font(.system(size: 15))
+                    VStack{
+                        Spacer().frame(height: 20)
+                        Text("صفر 💰").bold()
+                            .foregroundColor(.white)
+                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            .font(.system(size: 15))
+                        Spacer().frame(height: 20)
+                        //Image("")
+                    }
+                    Text("الميزانيه الشهرية")
+                        .foregroundColor(.white)
+                        .font(.system(size: 13))
+                    Spacer().frame(height: 20)
+                    Text("٤٠٠٠ ريال ")
+                        .foregroundColor(.white)
+                        .font(.system(size: 12))
+                }
+                .padding(.leading,190)
+                .padding(.top,30)
+                Spacer()
+                
+                
+            }
+            
+            else if charctarState == "sad"{
+                Rectangle()
+                    .frame(width: 331,height: 198).shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.white)
+                Rectangle()
+                    .frame(width:161,height:198)
+                    .foregroundColor(Color(hex:"FFFF00"))
+                    .padding(.leading,170)
+                Image("sad")
+                    .padding(.top,50)
+                VStack{
+                    Text("مصروفاتك")
+                        
+                        .font(.system(size: 15))
+                    VStack{
+                        Spacer().frame(height: 20)
+                        Text("صفر 💰").bold()
+                            
+                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            .font(.system(size: 15))
+                        Spacer().frame(height: 20)
+                        //Image("")
+                    }
+                    Text("الميزانيه الشهرية")
+                        
+                        .font(.system(size: 13))
+                    Spacer().frame(height: 20)
+                    Text("٤٠٠٠ ريال ")
+                        
+                        .font(.system(size: 12))
+                }
+                .padding(.leading,190)
+                .padding(.top,30)
+                Spacer()
+                
+            }
+            else if charctarState == "angry"{
+                Rectangle()
+                    .foregroundColor(.white)
+                    .frame(width: 331,height: 198).shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                Rectangle()
+                    .frame(width:161,height:198)
+                    .foregroundColor(Color(hex:"FD3E3E"))
+                    .padding(.leading,170)
+                Image("angry")
+                    .padding(.top,50)
+                VStack{
+                    Text("مصروفاتك")
+                        .foregroundColor(.white)
+                        .font(.system(size: 15))
+                    VStack{
+                        Spacer().frame(height: 20)
+                        Text("صفر 💰").bold()
+                            .foregroundColor(.white)
+                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            .font(.system(size: 15))
+                        Spacer().frame(height: 20)
+                        //Image("")
+                    }
+                    Text("الميزانيه الشهرية")
+                        .foregroundColor(.white)
+                        .font(.system(size: 13))
+                    Spacer().frame(height: 20)
+                    Text("٤٠٠٠ ريال ")
+                        .foregroundColor(.white)
+                        .font(.system(size: 12))
+                }
+                .padding(.leading,190)
+                .padding(.top,30)
+                Spacer()
+                
+            }
+         
             
             VStack{
                 Text("المتبقي")
                     .font(.system(size: 15))
                 VStack{
                     Spacer().frame(height: 20)
-                    Text("١٥٠٠").bold()
+                    Text("٤٠٠٠").bold()
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         .font(.system(size: 15))
                     Spacer().frame(height: 20)
@@ -57,13 +179,38 @@ struct budgetCradView: View {
                 Text("٦/٥/٢٠٢٣")
                     .font(.system(size: 12))
                 Spacer().frame(height:35)
+                
                 ZStack{
                     Image("talkFlow")
                         .padding(.leading,195)
-                    Spacer().frame(height:35)
-                    Text("استعد لقد بدأت خطتك المالية لهذا الشهر ")
-                        .padding(.leading,195)
-                        .padding(.top,20)
+                    if charctarState == ""{
+                        Spacer().frame(height:35)
+                        Text("استعد لقد بدأت خطتك المالية لهذا الشهر ")
+                            .padding(.leading,195)
+                            .padding(.top,20)
+                    }
+                    else if charctarState == "happy"{
+                        Text("ادائك رائع جدا استمر !")
+                            .padding(.leading,195)
+                            .padding(.top,20)
+                        
+                    }
+                    else if charctarState == "sad"{
+                        Text("ارجوك حاول ضبط نفسك انت على وشك الخروج عن ميزانيتك ")
+                            .font(.system(size: 13))
+                            .padding(.leading,195)
+                            .padding(.top,20)
+                            
+                        
+                    }
+                    
+                    else if charctarState == "angry"{
+                        Text("احذر لقد ابتعدت كثيرا عن هدفك !")
+                            .padding(.leading,195)
+                            .padding(.top,20)
+                        
+                    }
+                    
                 }
                 Button(action:{
                     print("hh'")
