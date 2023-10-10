@@ -7,16 +7,15 @@
 
 import SwiftUI
 struct budgetCradView: View {
-    
-    
-    @State var  charctarState = ""
-    //////
-    //////
-   
+    var incomeText = ""
+    var goalText = ""
+    var spendingText = ""
+    @State private var show = true
+    @State var  charctarState = "angry"
+  
     var body: some View {
+     
         ZStack(alignment:.top){
-            
-            
             if charctarState == ""{
                 Rectangle()
                     .foregroundColor(Color(hex:"FBF7AB"))
@@ -35,16 +34,16 @@ struct budgetCradView: View {
                          .font(.system(size: 15))
                      VStack{
                          Spacer().frame(height: 20)
-                         Text("صفر 💰").bold()
+                         Text("\(spendingText)💰").bold()
                              .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                              .font(.system(size: 15))
                          Spacer().frame(height: 20)
                          //Image("")
                      }
-                     Text("الميزانيه الشهرية")
+                    Text("الدخل الشهري")
                          .font(.system(size: 13))
                      Spacer().frame(height: 20)
-                     Text("٤٠٠٠ ريال ")
+                     Text("\(incomeText)")
                          .font(.system(size: 12))
                  }
                  .padding(.leading,190)
@@ -72,18 +71,18 @@ struct budgetCradView: View {
                         .font(.system(size: 15))
                     VStack{
                         Spacer().frame(height: 20)
-                        Text("صفر 💰").bold()
+                        Text("\(spendingText)💰").bold()
                             .foregroundColor(.white)
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                             .font(.system(size: 15))
                         Spacer().frame(height: 20)
                         //Image("")
                     }
-                    Text("الميزانيه الشهرية")
+                   Text("الدخل الشهري")
                         .foregroundColor(.white)
                         .font(.system(size: 13))
                     Spacer().frame(height: 20)
-                    Text("٤٠٠٠ ريال ")
+                    Text("\(incomeText)")
                         .foregroundColor(.white)
                         .font(.system(size: 12))
                 }
@@ -113,18 +112,18 @@ struct budgetCradView: View {
                         .font(.system(size: 15))
                     VStack{
                         Spacer().frame(height: 20)
-                        Text("صفر 💰").bold()
+                        Text("\(spendingText)💰").bold()
                             
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                             .font(.system(size: 15))
                         Spacer().frame(height: 20)
                         //Image("")
                     }
-                    Text("الميزانيه الشهرية")
+                    Text("الدخل الشهري")
                         
                         .font(.system(size: 13))
                     Spacer().frame(height: 20)
-                    Text("٤٠٠٠ ريال ")
+                    Text("\(incomeText)")
                         
                         .font(.system(size: 12))
                 }
@@ -152,18 +151,18 @@ struct budgetCradView: View {
                         .font(.system(size: 15))
                     VStack{
                         Spacer().frame(height: 20)
-                        Text("صفر 💰").bold()
+                        Text("\(spendingText)💰").bold()
                             .foregroundColor(.white)
-                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            .font(.title)
                             .font(.system(size: 15))
                         Spacer().frame(height: 20)
                         //Image("")
                     }
-                    Text("الميزانيه الشهرية")
+                    Text("الدخل الشهري")
                         .foregroundColor(.white)
                         .font(.system(size: 13))
                     Spacer().frame(height: 20)
-                    Text("٤٠٠٠ ريال ")
+                    Text("\(incomeText)")
                         .foregroundColor(.white)
                         .font(.system(size: 12))
                 }
@@ -174,20 +173,20 @@ struct budgetCradView: View {
          
             
             VStack{
-                Text("المتبقي")
+                Text("الادخار")
                     .font(.system(size: 15))
                 VStack{
                     Spacer().frame(height: 20)
                     Text("٤٠٠٠").bold()
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .font(.title)
                         .font(.system(size: 15))
                     Spacer().frame(height: 20)
                     //Image("")
                 }
-                Text("التاريخ")
+                Text("الهدف")
                     .font(.system(size: 13))
                 Spacer().frame(height: 20)
-                Text("٦/٥/٢٠٢٣")
+                Text("\(goalText)")
                     .font(.system(size: 12))
                 Spacer().frame(height:35)
                 

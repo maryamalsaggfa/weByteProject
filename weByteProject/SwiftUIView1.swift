@@ -13,33 +13,53 @@ struct ontentView: View {
 @State private var spendingText = ""
 @State private var months = 0
 @State private var goalReached = false
+@State private var isButtonTapped = false
 
-var body: some View {
-VStack {
-Text("Savings Goal Calculator")
-.font(.largeTitle)
-.padding()
 
-TextField("Enter your income", text: $incomeText)
-.textFieldStyle(RoundedBorderTextFieldStyle())
-.padding()
-
-TextField("Enter your goal", text: $goalText)
-.textFieldStyle(RoundedBorderTextFieldStyle())
-.padding()
-
-TextField("Enter your spending", text: $spendingText)
-.textFieldStyle(RoundedBorderTextFieldStyle())
-.padding()
-
-Button("Calculate") {
-calculateSavingsGoal()
-}
-.padding()
-.background(Color.blue)
-.foregroundColor(.white)
-.cornerRadius(10)
-
+    var body: some View {
+        VStack {
+            Text("Savings Goal Calculator")
+                .font(.largeTitle)
+                .padding()
+            
+            TextField("Enter your income", text: $incomeText)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            TextField("Enter your goal", text: $goalText)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            TextField("Enter your spending", text: $spendingText)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            
+            
+            
+            
+            Button("Calculate") {
+                calculateSavingsGoal()
+            }
+            .padding()
+            //.background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+            Button("send", action:{
+                isButtonTapped = true
+            })
+        }
+        .padding()
+        .background(Color.blue)
+        .foregroundColor(.black)
+        .cornerRadius(10)
+        
+        .fullScreenCover(isPresented: $isButtonTapped, content: {
+            ContentView(incomeText: incomeText,goalText: goalText,spendingText: spendingText)
+        })
+    
+   
+    
 if goalReached {
 Text("Congratulations! Goal reached in \(months) months.")
 .font(.headline)
@@ -49,8 +69,8 @@ Text("Goal not reached.")
 .font(.headline)
 .padding()
 }
-}
-.padding()
+
+//.padding()
 }
 
 private func calculateSavingsGoal() {
@@ -74,11 +94,7 @@ goalReached = currentGoal <= 0
 }
 }
 
-struct ContentView_Previews: PreviewProvider {
-static var previews: some View {
-ContentView()
-}
-}
+
 
 #Preview {
     ontentView()

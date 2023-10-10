@@ -9,8 +9,13 @@ import SwiftUI
 import SlidingTabView
 
 struct budgetView: View {
+    
     @State private var tabIndex=0
+    var incomeText = ""
+    var goalText = ""
+    var spendingText = ""
     var body: some View {
+        
         VStack {
             ZStack (alignment: .top){
                 VStack{
@@ -29,7 +34,7 @@ struct budgetView: View {
                 SlidingTabView(selection: $tabIndex, tabs: ["الميزانية","خريطة الطريق"], animation:.easeOut)
                 Spacer().frame(height:50)
                 if tabIndex == 0{
-                    budgetCradView()
+                    budgetCradView(incomeText: incomeText,goalText: goalText,spendingText: spendingText)
                 }else if tabIndex == 1{
                     roadmapView()
                 }
