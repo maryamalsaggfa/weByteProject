@@ -17,6 +17,7 @@
 		5CD8FBB72AD319BA007709AD /* budgetCradView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8FBB62AD319BA007709AD /* budgetCradView.swift */; };
 		5CD8FBB92AD319F4007709AD /* roadmapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8FBB82AD319F4007709AD /* roadmapView.swift */; };
 		5CD8FBBC2AD31EE5007709AD /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 5CD8FBBB2AD31EE5007709AD /* SlidingTabView */; };
+		874EFA812AD51798007ABDE8 /* SwiftUIView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874EFA802AD51798007ABDE8 /* SwiftUIView1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5CD8FBB22AD30BAA007709AD /* categoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoriesView.swift; sourceTree = "<group>"; };
 		5CD8FBB62AD319BA007709AD /* budgetCradView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = budgetCradView.swift; sourceTree = "<group>"; };
 		5CD8FBB82AD319F4007709AD /* roadmapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roadmapView.swift; sourceTree = "<group>"; };
+		874EFA802AD51798007ABDE8 /* SwiftUIView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				5C2546622AD3F83C008E51A4 /* fillingInfoFunction.swift */,
 				5CD8FBA62AD2F444007709AD /* Assets.xcassets */,
 				5CD8FBA82AD2F444007709AD /* Preview Content */,
+				874EFA802AD51798007ABDE8 /* SwiftUIView1.swift */,
 			);
 			path = weByteProject;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				5CD8FBB92AD319F4007709AD /* roadmapView.swift in Sources */,
 				5C2546632AD3F83C008E51A4 /* fillingInfoFunction.swift in Sources */,
 				5CD8FBA52AD2F443007709AD /* ContentView.swift in Sources */,
+				874EFA812AD51798007ABDE8 /* SwiftUIView1.swift in Sources */,
 				5CD8FBB72AD319BA007709AD /* budgetCradView.swift in Sources */,
 				5CD8FBA32AD2F443007709AD /* weByteProjectApp.swift in Sources */,
 				5CD8FBB12AD30725007709AD /* budgetView.swift in Sources */,

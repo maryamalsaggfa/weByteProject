@@ -256,7 +256,9 @@ extension Color {
         )
     }
 }
-
+func calculate(){
+    
+}
     
 
 
