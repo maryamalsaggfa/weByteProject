@@ -55,7 +55,7 @@ struct ontentView: View {
         .cornerRadius(10)
         
         .fullScreenCover(isPresented: $isButtonTapped, content: {
-            ContentView(incomeText: incomeText,goalText: goalText,spendingText: spendingText)
+            ContentView(incomeText: Int(incomeText) ?? 0,goalText: Int(goalText) ?? 0,spendingText: Int(spendingText) ?? 0)
         })
     
    

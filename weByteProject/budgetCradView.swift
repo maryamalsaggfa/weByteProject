@@ -7,12 +7,12 @@
 
 import SwiftUI
 struct budgetCradView: View {
-    var incomeText = ""
-    var goalText = ""
-    var spendingText = ""
-    var num :Int
-    var num2 :Int
-    var
+    var incomeText = 0
+    var goalText = 0
+    var spendingText = 0
+   // var num :Int
+   // var num2 :Int
+    
     
     @State private var show = true
     @State private var showAlert = false
@@ -247,7 +247,7 @@ struct budgetCradView: View {
             Spacer()
             
                 .fullScreenCover(isPresented: $showAlert, content: {
-                    CustomAlertContent(incomeText: incomeText,goalText: goalText,spendingTextNew:num,)
+                    CustomAlertContent(incomeText: Int(incomeText) ?? 0,goalText: Int(goalText) ?? 0,totalSpending: 0, spendingText: Int(spendingText) ?? 0)
             })
         
             

@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    var incomeText = ""
-    var goalText = ""
-    var spendingText = ""
+    var incomeText = 0
+    var goalText = 0
+    var spendingText = 0
     var body: some View {
        
         ZStack{
             TabView{
-                budgetView(incomeText: incomeText,goalText: goalText,spendingText:spendingText)
+                budgetView(incomeText: Int(incomeText) ?? 0,goalText: Int(goalText) ?? 0,spendingText:Int(spendingText) ?? 0)
                     .tabItem {
                         Image(systemName: "mappin.and.ellipse")
                         Text("مالية")

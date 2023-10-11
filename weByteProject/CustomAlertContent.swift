@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct CustomAlertContent: View {
-    var incomeText = ""
-    var goalText = ""
-    //var  spendingTextNew = ""
-    private var spendingText = ""
-    private var totalSpending: Int
-     var expeness1 = "0"
-    
-    @State private var expeness: Int
-    var expeness = Int (expeness1)
+    var incomeText = 0
+    var goalText = 0
+     var totalSpending = 0
+    //var  spendingTextNew =
+     var spendingText = 0
+   // var totalSpending: Int
+    @State private  var expeness1 = ""
+    @State private var expeness = 0
+   // var expeness = Int (expeness1)
     @State private var isButtonTapped = false
     var body: some View {
         VStack {
@@ -37,26 +37,29 @@ struct CustomAlertContent: View {
                     .cornerRadius(24)
                 
             }
-            .fullScreenCover(isPresented: $isButtonTapped, content: {
-                ContentView(incomeText: incomeText,goalText: goalText,spendingText: expeness)
+           /* .fullScreenCover(isPresented: $isButtonTapped, content: {
+                ContentView (incomeText: Int(incomeText) ?? 0,goalText: Int(goalText) ?? 0,spendingText: Int(spendingText) ?? 0)
             })
+            */
             
         }
     }
     private mutating func calculateSavingsGoal() {
+        expeness = Int(expeness1) ?? 0
         totalSpending += expeness
-    guard let income = Int(incomeText),
-    let goal = Int(goalText)
+        
+        //// تم الغاء حالات التحويل لانها استقبلتها رقم
+   // guard let income = Int(incomeText),
+   // let goal = Int(goalText)
     //let spending = Int(spendingText)
-    else {
-    return
-    }
-
+   // else {
+   // return
+   // }
     //months = 0
-    var currentGoal = goal
+    var currentGoal = goalText
 
     while currentGoal > 0 {
-    let saving = income - totalSpending
+    let saving = incomeText - totalSpending
     currentGoal -= saving
     //months += 1
     }

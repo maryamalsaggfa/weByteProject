@@ -11,9 +11,9 @@ import SlidingTabView
 struct budgetView: View {
     
     @State private var tabIndex=0
-    var incomeText = ""
-    var goalText = ""
-    var spendingText = ""
+    var incomeText = 0
+    var goalText = 0
+    var spendingText = 0
     var body: some View {
         
         VStack {
@@ -34,7 +34,7 @@ struct budgetView: View {
                 SlidingTabView(selection: $tabIndex, tabs: ["الميزانية","خريطة الطريق"], animation:.easeOut)
                 Spacer().frame(height:50)
                 if tabIndex == 0{
-                    budgetCradView(incomeText: incomeText,goalText: goalText,spendingText: spendingText)
+                    budgetCradView(incomeText: Int(incomeText) ?? 0,goalText: Int(goalText) ?? 0,spendingText: Int(spendingText) ?? 0)
                 }else if tabIndex == 1{
                     roadmapView()
                 }
