@@ -9,7 +9,7 @@ import SwiftUI
 struct budgetCradView: View {
     var incomeText = 0
     var goalText = 0
-    var spendingText = 0
+    @Binding var spendingText :Int
    // var num :Int
    // var num2 :Int
     
@@ -119,8 +119,8 @@ struct budgetCradView: View {
                     VStack{
                         Spacer().frame(height: 20)
                         Text("\(spendingText)💰").bold()
-                            
-                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        
+                            .font(.title)
                             .font(.system(size: 15))
                         Spacer().frame(height: 20)
                         //Image("")
@@ -247,7 +247,7 @@ struct budgetCradView: View {
             Spacer()
             
                 .fullScreenCover(isPresented: $showAlert, content: {
-                    CustomAlertContent(incomeText: Int(incomeText) ?? 0,goalText: Int(goalText) ?? 0,totalSpending: 0, spendingText: Int(spendingText) ?? 0)
+                    CustomAlertContent(incomeText: Int(incomeText) ,goalText: Int(goalText) ,totalSpending: 0, spendingText: spendingText)
             })
         
             
@@ -277,7 +277,13 @@ func cardViewDesign(hexCode:String,ImageName:String){
 }
     
 
-
-#Preview {
-    budgetCradView()
+struct budgetCradView_Previews: PreviewProvider {
+    static var previews: some View {
+        budgetCradView(
+            incomeText: 0, // Provide an initial value
+            goalText: 0,   // Provide an initial value
+            spendingText: .constant(0) // Use .constant to create a binding with an initial value
+        )
+    }
 }
+

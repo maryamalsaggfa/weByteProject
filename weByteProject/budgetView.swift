@@ -13,7 +13,7 @@ struct budgetView: View {
     @State private var tabIndex=0
     var incomeText = 0
     var goalText = 0
-    var spendingText = 0
+    @Binding var spendingText :Int
     var body: some View {
         
         VStack {
@@ -34,7 +34,7 @@ struct budgetView: View {
                 SlidingTabView(selection: $tabIndex, tabs: ["الميزانية","خريطة الطريق"], animation:.easeOut)
                 Spacer().frame(height:50)
                 if tabIndex == 0{
-                    budgetCradView(incomeText: Int(incomeText) ?? 0,goalText: Int(goalText) ?? 0,spendingText: Int(spendingText) ?? 0)
+                    budgetCradView(incomeText: Int(incomeText) ,goalText: Int(goalText)  ,spendingText: $spendingText )
                 }else if tabIndex == 1{
                     roadmapView()
                 }
@@ -51,7 +51,10 @@ struct budgetView: View {
     }
 }
 
+struct budgetView_Previews: PreviewProvider {
+    @State static private var dummySpendingText = 0
 
-#Preview {
-    budgetView()
+    static var previews: some View {
+        budgetView(incomeText: 0, goalText: 0, spendingText: $dummySpendingText)
+    }
 }

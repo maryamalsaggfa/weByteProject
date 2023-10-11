@@ -10,16 +10,17 @@ import SwiftUI
 struct CustomAlertContent: View {
     var incomeText = 0
     var goalText = 0
-     var totalSpending = 0
+    @State var totalSpending = 0
     //var  spendingTextNew =
-     var spendingText = 0
+    @State var spendingText = 0
    // var totalSpending: Int
     @State private  var expeness1 = ""
-    @State private var expeness = 0
+    @State public var expeness = 0
    // var expeness = Int (expeness1)
     @State private var isButtonTapped = false
     var body: some View {
         VStack {
+            
             Text("Savings Goal Calculator")
                 .font(.largeTitle)
                 .padding()
@@ -27,8 +28,12 @@ struct CustomAlertContent: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             Button(action:{
+                calculateSavingsGoal()
                 isButtonTapped = true
+              
+               // calculateSavingsGoal()
             }){
+                Text("\(totalSpending)")
                 Text("save")
                     .bold()
                     .foregroundColor(.white)
@@ -37,16 +42,16 @@ struct CustomAlertContent: View {
                     .cornerRadius(24)
                 
             }
-           /* .fullScreenCover(isPresented: $isButtonTapped, content: {
-                ContentView (incomeText: Int(incomeText) ?? 0,goalText: Int(goalText) ?? 0,spendingText: Int(spendingText) ?? 0)
+           .fullScreenCover(isPresented: $isButtonTapped, content: {
+                ContentView (incomeText: Int(incomeText) ,goalText: Int(goalText) ,spendingText: totalSpending )
             })
-            */
+            
             
         }
     }
-    private mutating func calculateSavingsGoal() {
+    private func calculateSavingsGoal() {
         expeness = Int(expeness1) ?? 0
-        totalSpending += expeness
+        totalSpending = totalSpending + expeness
         
         //// تم الغاء حالات التحويل لانها استقبلتها رقم
    // guard let income = Int(incomeText),
@@ -56,14 +61,15 @@ struct CustomAlertContent: View {
    // return
    // }
     //months = 0
+        
     var currentGoal = goalText
-
+        
     while currentGoal > 0 {
     let saving = incomeText - totalSpending
     currentGoal -= saving
     //months += 1
     }
-
+        spendingText = totalSpending
     //goalReached = currentGoal <= 0
     }
     }
