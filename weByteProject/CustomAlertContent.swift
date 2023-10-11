@@ -8,8 +8,35 @@
 import SwiftUI
 
 struct CustomAlertContent: View {
+    var incomeText = ""
+    var goalText = ""
+    var  spendingTextNew = ""
+    @State private var expeness: String = ""
+    @State private var isButtonTapped = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Savings Goal Calculator")
+                .font(.largeTitle)
+                .padding()
+            TextField("enter expeness", text: $expeness)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            Button(action:{
+               isButtonTapped = true
+            }){
+                Text("save")
+                    .bold()
+                    .foregroundColor(.white)
+                    .frame(width: 355 ,height: 48)
+                    .background(Color(hex:"02B78B"))
+                    .cornerRadius(24)
+                    
+            }
+            .fullScreenCover(isPresented: $isButtonTapped, content: {
+                ContentView(incomeText: incomeText,goalText: goalText,spendingText: expeness)
+            })
+        
+        }
     }
 }
 

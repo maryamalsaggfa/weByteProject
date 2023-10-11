@@ -10,8 +10,11 @@ struct budgetCradView: View {
     var incomeText = ""
     var goalText = ""
     var spendingText = ""
+    
     @State private var show = true
-    @State var  charctarState = "angry"
+    @State private var showAlert = false
+    @State var  charctarState = "sad"
+  
   
     var body: some View {
      
@@ -223,7 +226,7 @@ struct budgetCradView: View {
                     
                 }
                 Button(action:{
-                    print("hh'")
+                    showAlert = true
                 }){
                     Text("اضف صرفك اليومي")
                         .bold()
@@ -233,15 +236,19 @@ struct budgetCradView: View {
                         .cornerRadius(24)
                         .padding(.leading,195)
                 }
+                
+              
             }
             .padding(.trailing,190)
             .padding(.top,30)
             Spacer()
             
-        }
-         
+                .fullScreenCover(isPresented: $showAlert, content: {
+                    CustomAlertContent(incomeText: incomeText,goalText: goalText,spendingTextNew: spendingText)
+            })
         
-           
+            
+        }
     }
 }
 extension Color {
@@ -256,6 +263,13 @@ extension Color {
     }
 }
 func calculate(){
+}
+
+func cardViewInfo(goal:String,income:String,chartacrState:String){
+}
+func cardViewDesign(hexCode:String,ImageName:String){
+    
+    
     
 }
     
