@@ -10,6 +10,9 @@ struct budgetCradView: View {
     var incomeText = ""
     var goalText = ""
     var spendingText = ""
+    var num :Int
+    var num2 :Int
+    var
     
     @State private var show = true
     @State private var showAlert = false
@@ -244,7 +247,7 @@ struct budgetCradView: View {
             Spacer()
             
                 .fullScreenCover(isPresented: $showAlert, content: {
-                    CustomAlertContent(incomeText: incomeText,goalText: goalText,spendingTextNew: spendingText)
+                    CustomAlertContent(incomeText: incomeText,goalText: goalText,spendingTextNew:num,)
             })
         
             
