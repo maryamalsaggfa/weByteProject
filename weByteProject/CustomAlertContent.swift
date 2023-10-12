@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomAlertContent: View {
     var incomeText = 0
-    var goalText = 0
+    @State var goalText = 0
    // @State var totalSpending = 0
     //var  spendingTextNew =
     @State var spendingText = 0
@@ -18,6 +18,8 @@ struct CustomAlertContent: View {
     @State public var expeness = 0
    // var expeness = Int (expeness1)
     @State private var isButtonTapped = false
+    @State var stringGoal = ""
+    @State var saving = 0
     var body: some View {
         VStack {
             
@@ -59,7 +61,7 @@ struct CustomAlertContent: View {
             }
             
            .fullScreenCover(isPresented: $isButtonTapped, content: {
-                ContentView (incomeText: Int(incomeText) ,goalText: Int(goalText) ,spendingText: spendingText )
+                ContentView (incomeText: Int(incomeText) ,goalText: Int(goalText) ,spendingText: spendingText, saving: saving)
             })
             
             
@@ -71,7 +73,7 @@ struct CustomAlertContent: View {
     private func calculateSavingsGoal() {
         expeness = Int(expeness1) ?? 0
         spendingText = spendingText + expeness
-        
+        stringGoal = String(goalText)
         //// تم الغاء حالات التحويل لانها استقبلتها رقم
    // guard let income = Int(incomeText),
    // let goal = Int(goalText)
@@ -81,17 +83,18 @@ struct CustomAlertContent: View {
    // }
     //months = 0
         
-    var currentGoal = goalText
+    //var currentGoal = goalText
         
-    while currentGoal > 0 {
-    let saving = incomeText - spendingText
-    currentGoal -= saving
+    while goalText > 0 {
+     saving = incomeText-spendingText
+    goalText -= saving
     //months += 1
     }
         spendingText = spendingText
     //goalReached = currentGoal <= 0
     }
     }
+
 
     struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

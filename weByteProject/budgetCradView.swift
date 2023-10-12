@@ -8,16 +8,17 @@
 import SwiftUI
 struct budgetCradView: View {
     var incomeText = 0
-    var goalText = 0
+    @Binding var goalText : Int
     @Binding var spendingText :Int
+    @Binding var saving :Int
    // var num :Int
    // var num2 :Int
+    @Binding var stringGoal: String
     
     
     @State private var show = true
     @State private var showAlert = false
     @State var  charctarState = "sad"
-  
   
     var body: some View {
      
@@ -183,13 +184,14 @@ struct budgetCradView: View {
                     .font(.system(size: 15))
                 VStack{
                     Spacer().frame(height: 20)
-                    Text("٤٠٠٠").bold()
+                    Text("\(saving)").bold()
                         .font(.title)
                         .font(.system(size: 15))
                     Spacer().frame(height: 20)
                     //Image("")
                 }
                 Text("الهدف")
+                //Text("\(stringGoal)")
                     .font(.system(size: 13))
                 Spacer().frame(height: 20)
                 Text("\(goalText)")
@@ -247,7 +249,7 @@ struct budgetCradView: View {
             Spacer()
             
                 .fullScreenCover(isPresented: $showAlert, content: {
-                    CustomAlertContent(incomeText: Int(incomeText) ,goalText: Int(goalText) ,spendingText: spendingText)
+                    CustomAlertContent(incomeText: Int(incomeText) ,goalText: Int(goalText) ,spendingText: spendingText, saving: saving)
             })
         
             
@@ -281,9 +283,10 @@ struct budgetCradView_Previews: PreviewProvider {
     static var previews: some View {
         budgetCradView(
             incomeText: 0, // Provide an initial value
-            goalText: 0,   // Provide an initial value
-            spendingText: .constant(0) // Use .constant to create a binding with an initial value
-        )
+            goalText:.constant(0),   // Provide an initial value
+            spendingText: .constant(0), // Use .constant to create a binding with an initial value
+            saving:.constant(0),
+            stringGoal: .constant("")  )
     }
 }
 
