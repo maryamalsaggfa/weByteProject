@@ -247,7 +247,7 @@ struct budgetCradView: View {
             Spacer()
             
                 .fullScreenCover(isPresented: $showAlert, content: {
-                    CustomAlertContent(incomeText: Int(incomeText) ,goalText: Int(goalText) ,totalSpending: 0, spendingText: spendingText)
+                    CustomAlertContent(incomeText: Int(incomeText) ,goalText: Int(goalText) ,spendingText: spendingText)
             })
         
             

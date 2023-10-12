@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomAlertContent: View {
     var incomeText = 0
     var goalText = 0
-    @State var totalSpending = 0
+   // @State var totalSpending = 0
     //var  spendingTextNew =
     @State var spendingText = 0
    // var totalSpending: Int
@@ -33,7 +33,7 @@ struct CustomAlertContent: View {
               
                // calculateSavingsGoal()
             }){
-                Text("\(totalSpending)")
+                Text("\(spendingText)")
                 Text("save")
                     .bold()
                     .foregroundColor(.white)
@@ -42,16 +42,35 @@ struct CustomAlertContent: View {
                     .cornerRadius(24)
                 
             }
+            Button(action:{
+                calculatespending()
+                isButtonTapped = true
+              
+               // calculatespending()
+            }){
+                Text("\(spendingText)")
+                Text("+")
+                    .bold()
+                    .foregroundColor(.white)
+                    .frame(width: 355 ,height: 48)
+                    .background(Color(hex:"02B78B"))
+                    .cornerRadius(24)
+                
+            }
+            
            .fullScreenCover(isPresented: $isButtonTapped, content: {
-                ContentView (incomeText: Int(incomeText) ,goalText: Int(goalText) ,spendingText: totalSpending )
+                ContentView (incomeText: Int(incomeText) ,goalText: Int(goalText) ,spendingText: spendingText )
             })
             
             
         }
     }
+    private func calculatespending(){
+        spendingText = spendingText + expeness
+    }
     private func calculateSavingsGoal() {
         expeness = Int(expeness1) ?? 0
-        totalSpending = totalSpending + expeness
+        spendingText = spendingText + expeness
         
         //// تم الغاء حالات التحويل لانها استقبلتها رقم
    // guard let income = Int(incomeText),
@@ -65,11 +84,11 @@ struct CustomAlertContent: View {
     var currentGoal = goalText
         
     while currentGoal > 0 {
-    let saving = incomeText - totalSpending
+    let saving = incomeText - spendingText
     currentGoal -= saving
     //months += 1
     }
-        spendingText = totalSpending
+        spendingText = spendingText
     //goalReached = currentGoal <= 0
     }
     }
