@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C1E19F62ADBDED5000C2402 /* UserEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1E19F52ADBDED5000C2402 /* UserEntry.swift */; };
 		5C2546632AD3F83C008E51A4 /* fillingInfoFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2546622AD3F83C008E51A4 /* fillingInfoFunction.swift */; };
 		5C95543D2AD6814E00AF5120 /* CustomAlertContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C95543C2AD6814E00AF5120 /* CustomAlertContent.swift */; };
+		5CB54EB72ADBC1C5008A060D /* UserName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB54EB62ADBC1C5008A060D /* UserName.swift */; };
+		5CB54EB92ADBC1DE008A060D /* UserGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB54EB82ADBC1DE008A060D /* UserGoal.swift */; };
+		5CB54EBB2ADBC225008A060D /* UserSalary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB54EBA2ADBC225008A060D /* UserSalary.swift */; };
 		5CD8FBA32AD2F443007709AD /* weByteProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8FBA22AD2F443007709AD /* weByteProjectApp.swift */; };
 		5CD8FBA52AD2F443007709AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8FBA42AD2F443007709AD /* ContentView.swift */; };
 		5CD8FBA72AD2F444007709AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD8FBA62AD2F444007709AD /* Assets.xcassets */; };
@@ -22,8 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C1E19F52ADBDED5000C2402 /* UserEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntry.swift; sourceTree = "<group>"; };
 		5C2546622AD3F83C008E51A4 /* fillingInfoFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fillingInfoFunction.swift; sourceTree = "<group>"; };
 		5C95543C2AD6814E00AF5120 /* CustomAlertContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertContent.swift; sourceTree = "<group>"; };
+		5CB54EB62ADBC1C5008A060D /* UserName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserName.swift; sourceTree = "<group>"; };
+		5CB54EB82ADBC1DE008A060D /* UserGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGoal.swift; sourceTree = "<group>"; };
+		5CB54EBA2ADBC225008A060D /* UserSalary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSalary.swift; sourceTree = "<group>"; };
 		5CD8FB9F2AD2F443007709AD /* weByteProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weByteProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD8FBA22AD2F443007709AD /* weByteProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weByteProjectApp.swift; sourceTree = "<group>"; };
 		5CD8FBA42AD2F443007709AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +81,10 @@
 				5CD8FBB02AD30725007709AD /* budgetView.swift */,
 				5CD8FBB82AD319F4007709AD /* roadmapView.swift */,
 				5CD8FBB62AD319BA007709AD /* budgetCradView.swift */,
+				5CB54EB62ADBC1C5008A060D /* UserName.swift */,
+				5CB54EB82ADBC1DE008A060D /* UserGoal.swift */,
+				5CB54EBA2ADBC225008A060D /* UserSalary.swift */,
+				5C1E19F52ADBDED5000C2402 /* UserEntry.swift */,
 				5C2546622AD3F83C008E51A4 /* fillingInfoFunction.swift */,
 				5CD8FBA62AD2F444007709AD /* Assets.xcassets */,
 				5CD8FBA82AD2F444007709AD /* Preview Content */,
@@ -166,13 +178,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CB54EB92ADBC1DE008A060D /* UserGoal.swift in Sources */,
 				5CD8FBB32AD30BAA007709AD /* categoriesView.swift in Sources */,
 				5CD8FBB92AD319F4007709AD /* roadmapView.swift in Sources */,
 				5C2546632AD3F83C008E51A4 /* fillingInfoFunction.swift in Sources */,
+				5CB54EB72ADBC1C5008A060D /* UserName.swift in Sources */,
 				5CD8FBA52AD2F443007709AD /* ContentView.swift in Sources */,
+				5CB54EBB2ADBC225008A060D /* UserSalary.swift in Sources */,
 				874EFA812AD51798007ABDE8 /* SwiftUIView1.swift in Sources */,
 				5CD8FBB72AD319BA007709AD /* budgetCradView.swift in Sources */,
 				5CD8FBA32AD2F443007709AD /* weByteProjectApp.swift in Sources */,
+				5C1E19F62ADBDED5000C2402 /* UserEntry.swift in Sources */,
 				5C95543D2AD6814E00AF5120 /* CustomAlertContent.swift in Sources */,
 				5CD8FBB12AD30725007709AD /* budgetView.swift in Sources */,
 			);

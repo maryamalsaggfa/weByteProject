@@ -13,7 +13,7 @@ struct ContentView: View {
    @State var spendingText = 0
     @State var saving = 0
     @State var stringGoal = ""
-    
+     //goalText = (Int)stringGoal
     var body: some View {
        
         ZStack{
