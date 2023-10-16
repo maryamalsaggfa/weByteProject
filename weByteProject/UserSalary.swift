@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserSalary: View {
-    @State var goalText = 0
+    @State var goalText = 0.0
     var nameText :String
     @State var salaryText = ""
     @State private var isButtonTapped = false
@@ -66,7 +66,7 @@ struct UserSalary: View {
                 .cornerRadius(24)
                 .padding(.bottom,50)
                 .fullScreenCover(isPresented: $isButtonTapped, content: {
-                    UserEntry(incomeText: Int(salaryText) ?? 0,goalText: goalText)
+                    UserEntry(incomeText: Double(salaryText) ?? 0.0,goalText: goalText)
                 })
             
 

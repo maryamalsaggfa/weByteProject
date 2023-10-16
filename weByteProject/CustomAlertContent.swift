@@ -8,21 +8,20 @@
 import SwiftUI
 
 struct CustomAlertContent: View {
-    var incomeText = 0
-    @State var goalText = 0
+    var incomeText = 0.0
+    @State var goalText = 0.0
    // @State var totalSpending = 0
     //var  spendingTextNew =
-    @State var spendingText = 0
+    @State var spendingText = 0.0
    // var totalSpending: Int
     @State private  var expeness1 = ""
-    @State public var expeness = 0
+    @State public var expeness = 0.0
    // var expeness = Int (expeness1)
     @State private var isButtonTapped = false
     @State var stringGoal = ""
-    @State var saving = 0
+    @State var saving = 0.0
     var body: some View {
         VStack {
-            
             Text("Savings Goal Calculator")
                 .font(.largeTitle)
                 .padding()
@@ -61,7 +60,7 @@ struct CustomAlertContent: View {
             }
             
            .fullScreenCover(isPresented: $isButtonTapped, content: {
-                ContentView (incomeText: Int(incomeText) ,goalText: Int(goalText) ,spendingText: spendingText, saving: saving)
+               ContentView (incomeText: incomeText ,goalText: goalText ,spendingText: spendingText, saving: saving)
             })
             
             
@@ -71,9 +70,10 @@ struct CustomAlertContent: View {
         spendingText = spendingText + expeness
     }
     private func calculateSavingsGoal() {
-        expeness = Int(expeness1) ?? 0
+        expeness = Double(Int(expeness1) ?? 0)
         spendingText = spendingText + expeness
         stringGoal = String(goalText)
+        saving = incomeText-spendingText
         //// تم الغاء حالات التحويل لانها استقبلتها رقم
    // guard let income = Int(incomeText),
    // let goal = Int(goalText)

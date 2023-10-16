@@ -9,8 +9,8 @@ import SwiftUI
 
 struct UserEntry: View {
     @State private var isButtonTapped = false
-    var incomeText = 0
-    @State var goalText = 0
+    var incomeText = 0.0
+    @State var goalText = 0.0
     var body: some View {
         ZStack(alignment: .bottom){
         
@@ -53,7 +53,7 @@ struct UserEntry: View {
                 .padding(.bottom,50)
                 
                 .fullScreenCover(isPresented: $isButtonTapped, content: {
-                    ContentView(incomeText: Int(incomeText) ,goalText: Int(goalText))
+                    ContentView(incomeText: incomeText ,goalText: goalText)
                 })
             
             }

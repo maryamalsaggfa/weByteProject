@@ -89,7 +89,7 @@ struct UserGoal: View {
                             .padding(.bottom,50)
                         
                          .fullScreenCover(isPresented: $isButtonTapped, content: {
-                             UserSalary(goalText: Int(goalText) ?? 0,nameText: nameText)
+                             UserSalary(goalText:Double(goalText) ?? 0.0 ,nameText: nameText)
                          })
                     }
                     
