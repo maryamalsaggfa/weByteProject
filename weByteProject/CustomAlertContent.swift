@@ -43,12 +43,14 @@ struct CustomAlertContent: View {
                // calculateSavingsGoal()
             }){
                 Text("\(spendingText)")
+                   // .padding()
                 Text("اضافة")
                     .bold()
                     .foregroundColor(.white)
                     .frame(width: 355 ,height: 48)
                     .background(Color(hex:"02B78B"))
                     .cornerRadius(24)
+                    .padding()
                 
             }
           /*  Button(action:{

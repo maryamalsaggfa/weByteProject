@@ -15,7 +15,7 @@ struct UserEntry: View {
         ZStack(alignment: .bottom){
         
             VStack{
-                Image("lastIntro")
+                Image("Image 2")
                     .resizable()
                     .aspectRatio(contentMode:.fit)
                     .frame(width: 400,height: 400)

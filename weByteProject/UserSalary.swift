@@ -42,12 +42,9 @@ struct UserSalary: View {
             VStack{
                 
                 
-                Text(" أهلا ، \(nameText) ")
-                    .foregroundColor(.black)
-                    .padding(.leading,250)
-                    .bold()
+               
                 
-                Image("salary")
+                Image("lastIntro")
                     .resizable()
                     .aspectRatio(contentMode:.fit)
                     .frame(width: 300,height: 300)

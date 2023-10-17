@@ -81,6 +81,7 @@ struct UserGoal: View {
                     
                     
                     VStack{
+   
                         Text(" اكتب لي قيمة هدفك عشان اساعدك توصل له")
                             .font(.system(size: 13))
                             .padding(.bottom,615)
