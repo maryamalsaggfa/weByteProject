@@ -31,6 +31,7 @@ struct CustomAlertContent: View {
     var body: some View {
         VStack {
             Text("آلة حساب المصروفات ")
+                .foregroundColor(.black)
                 .font(.largeTitle)
                 .padding()
             TextField("اضف مصروفاتك", text: $expeness1)
@@ -113,7 +114,7 @@ struct CustomAlertContent: View {
         
     while goalText > 0 {
      saving = incomeText-spendingText
-    goalText -= saving
+    goalText -=  saving
     //months += 1
     }
         

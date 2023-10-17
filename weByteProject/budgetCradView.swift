@@ -40,23 +40,27 @@ struct budgetCradView: View {
                     .padding(.top,50)
             VStack{
                 Text("مصروفاتك")
+                    .foregroundColor(.black)
               //  Text("\(charctarState)")
-    
                     .font(.system(size: 15))
                 VStack{
                     Spacer().frame(height: 20)
                     Text(formatDouble(spendingText, decimalPlaces: 0)).bold()
+                        .foregroundColor(.black)
                     // Text("\(spendingText)💰").bold()
                         .font(.title)
                         .font(.system(size: 15))
                     Spacer().frame(height: 20)
+                        .foregroundColor(.black)
                     //Image("")
                 }
                 Text("الدخل الشهري")
+                    .foregroundColor(.black)
                     .font(.system(size: 13))
                 Spacer().frame(height: 20)
                 Text(formatDouble(incomeText, decimalPlaces: 0)).bold()
                     .font(.system(size: 12))
+                    .foregroundColor(.black)
             }
             .padding(.leading,190)
             .padding(.top,30)
@@ -124,11 +128,12 @@ struct budgetCradView: View {
                     .padding(.top,50)
                 VStack{
                     Text("مصروفاتك")
-                    
+                        .foregroundColor(.black)
                         .font(.system(size: 15))
                     VStack{
                         Spacer().frame(height: 20)
                         Text(formatDouble(spendingText, decimalPlaces: 0)).bold()
+                            .foregroundColor(.black)
                        // Text("\(spendingText)💰").bold()
                         
                             .font(.title)
@@ -137,10 +142,11 @@ struct budgetCradView: View {
                         //Image("")
                     }
                     Text("الدخل الشهري")
-                    
+                        .foregroundColor(.black)
                         .font(.system(size: 13))
                     Spacer().frame(height: 20)
                     Text(formatDouble(incomeText, decimalPlaces: 0)).bold()
+                        .foregroundColor(.black)
                    // Text("\(incomeText)")
                     
                         .font(.system(size: 12))
@@ -196,25 +202,28 @@ struct budgetCradView: View {
             
             VStack{
                 Text("الادخار")
+                    .foregroundColor(.black)
                     .font(.system(size: 15))
                 VStack{
                     Spacer().frame(height: 20)
                     Text(formatDouble(saving, decimalPlaces: 0)).bold()
                     //Text("\(saving)").bold()
+                        .foregroundColor(.black)
                         .font(.title)
                         .font(.system(size: 15))
                     Spacer().frame(height: 20)
                     //Image("")
                 }
                 Text("الهدف")
+                    .foregroundColor(.black)
                 //Text("\(stringGoal)")
                     .font(.system(size: 13))
                 Spacer().frame(height: 20)
-                Text("\(stringGoal)").bold()
-                    .font(.system(size: 12))
+              //  Text("\(stringGoal)").bold()
                 Text(formatDouble(goalText, decimalPlaces: 0)).bold()
-                .font(.system(size: 10))
-                Spacer().frame(height:33)
+                    .foregroundColor(.black)
+                .font(.system(size: 15))
+                Spacer().frame(height:20)
                 
                 ZStack{
                     Image("talkFlow")
@@ -222,17 +231,20 @@ struct budgetCradView: View {
                     if charctarState == ""{
                         Spacer().frame(height:35)
                         Text("استعد لقد بدأت خطتك المالية لهذا الشهر ")
+                            .foregroundColor(.black)
                             .padding(.leading,195)
                             .padding(.top,20)
                     }
                     else if charctarState == "happy"{
                         Text("ادائك رائع جدا استمر !")
+                            .foregroundColor(.black)
                             .padding(.leading,195)
                             .padding(.top,20)
                         
                     }
                     else if charctarState == "sad"{
                         Text("ارجوك حاول ضبط نفسك انت على وشك الخروج عن ميزانيتك ")
+                            .foregroundColor(.black)
                             .font(.system(size: 13))
                             .padding(.leading,195)
                             .padding(.top,20)
@@ -242,6 +254,7 @@ struct budgetCradView: View {
                     
                     else if charctarState == "angry"{
                         Text("احذر لقد ابتعدت كثيرا عن هدفك !")
+                            .foregroundColor(.black)
                             .padding(.leading,195)
                             .padding(.top,20)
                         
