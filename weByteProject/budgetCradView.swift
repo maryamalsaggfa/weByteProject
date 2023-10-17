@@ -17,7 +17,7 @@ struct budgetCradView: View {
     @State private var show = true
     @State private var showAlert = false
     @Binding var  charctarState:String
-    
+    @State private var isSheetPresented = false
     // A function to format a double to a string with a specific number of decimal places
         func formatDouble(_ value: Double, decimalPlaces: Int) -> String {
             return String(format: "%.\(decimalPlaces)f", value)
@@ -266,7 +266,7 @@ struct budgetCradView: View {
             .padding(.top,30)
             Spacer()
             
-                .fullScreenCover(isPresented: $showAlert, content: {
+                .sheet(isPresented: $showAlert, content: {
                     CustomAlertContent(incomeText: incomeText ,goalText: goalText ,spendingText: spendingText, saving: saving)
                 })
             
