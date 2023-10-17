@@ -12,7 +12,7 @@ struct weByteProjectApp: App {
     var body: some Scene {
         WindowGroup {
             //ontentView()
-            UserName()
+           splash()
         }
     }
 }

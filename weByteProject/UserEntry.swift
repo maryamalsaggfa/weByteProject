@@ -19,13 +19,14 @@ struct UserEntry: View {
                     .resizable()
                     .aspectRatio(contentMode:.fit)
                     .frame(width: 400,height: 400)
-                    .padding(.bottom,200)
+                    .padding(.bottom,250)
             }
         
             VStack{
                 Text(" جهزت لك خطتك المالية يلا نشوفها سوا !")
-                    .font(.system(size: 16))
-                    .padding(.bottom,525)
+                    .font(.system(size: 15))
+                    .padding(.bottom,600)
+                    .bold()
                     .padding(.leading,10)
                     .foregroundColor(Color(hex:"#028175"))
             }
@@ -50,7 +51,7 @@ struct UserEntry: View {
                 .frame(width: 330 ,height: 48)
                 .background(Color(hex:"02B78B"))
                 .cornerRadius(24)
-                .padding(.bottom,50)
+                .padding(.bottom,80)
                 
                 .fullScreenCover(isPresented: $isButtonTapped, content: {
                     ContentView(incomeText: incomeText ,goalText: goalText)

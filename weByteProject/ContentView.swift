@@ -13,18 +13,20 @@ struct ContentView: View {
     @State var spendingText = 0.0
     @State var saving = 0.0
     @State var stringGoal = ""
+    @State var charctarState = ""
+    @State var coinPosition = 450
      //goalText = (Int)stringGoal
     var body: some View {
        
         ZStack{
             TabView{
-                budgetView(incomeText: incomeText ,goalText: $goalText ,spendingText:$spendingText, saving : $saving, stringGoal: $stringGoal)
+                budgetView(incomeText: incomeText ,goalText: $goalText ,spendingText:$spendingText, saving : $saving, stringGoal: $stringGoal,charctarState: $charctarState,coinPosition: $coinPosition)
                     .tabItem {
                         Image(systemName: "mappin.and.ellipse")
                         Text("مالية")
                            
                     }
-                categoriesView()
+                ContentView2()
                     .tabItem {
                         Image(systemName: "rectangle.grid.2x2")
                         Text("التصنيفات")

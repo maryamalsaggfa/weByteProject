@@ -14,17 +14,18 @@ struct budgetCradView: View {
    // var num :Int
    // var num2 :Int
     @Binding var stringGoal: String
-    
-    
     @State private var show = true
     @State private var showAlert = false
-    @State var  charctarState = ""
+    @Binding var  charctarState:String
+    
+    // A function to format a double to a string with a specific number of decimal places
+        func formatDouble(_ value: Double, decimalPlaces: Int) -> String {
+            return String(format: "%.\(decimalPlaces)f", value)
+        }
   
     var body: some View {
-        
         ZStack(alignment:.top){
-            // default expretion:
-             
+           // if charctarState == ""{
                 Rectangle()
                     .foregroundColor(Color(hex:"FBF7AB"))
                     .frame(width: 331,height: 198).shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
@@ -37,31 +38,35 @@ struct budgetCradView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
                     .padding(.top,50)
+            VStack{
+                Text("مصروفاتك")
+              //  Text("\(charctarState)")
+    
+                    .font(.system(size: 15))
                 VStack{
-                    Text("مصروفاتك")
-                        .font(.system(size: 15))
-                    VStack{
-                        Spacer().frame(height: 20)
-                        Text("\(spendingText)💰").bold()
-                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                            .font(.system(size: 15))
-                        Spacer().frame(height: 20)
-                        //Image("")
-                    }
-                    Text("الدخل الشهري")
-                        .font(.system(size: 13))
                     Spacer().frame(height: 20)
-                    Text("\(incomeText)")
-                        .font(.system(size: 12))
+                    Text(formatDouble(spendingText, decimalPlaces: 0)).bold()
+                    // Text("\(spendingText)💰").bold()
+                        .font(.title)
+                        .font(.system(size: 15))
+                    Spacer().frame(height: 20)
+                    //Image("")
                 }
-                .padding(.leading,190)
-                .padding(.top,30)
+                Text("الدخل الشهري")
+                    .font(.system(size: 13))
+                Spacer().frame(height: 20)
+                Text(formatDouble(incomeText, decimalPlaces: 0)).bold()
+                    .font(.system(size: 12))
+            }
+            .padding(.leading,190)
+            .padding(.top,30)
                 Spacer()
+           // }
                 
             
             //happy expretion:
-            
-            if saving == (Double(incomeText) * (0.20)) {
+           // saving == (Double(incomeText) * (0.20))
+            if charctarState == "happy" {
                 Rectangle()
                     .foregroundColor(.white)
                     .frame(width: 331,height: 198).shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
@@ -80,7 +85,8 @@ struct budgetCradView: View {
                         .font(.system(size: 15))
                     VStack{
                         Spacer().frame(height: 20)
-                        Text("\(spendingText)💰").bold()
+                        Text(formatDouble(spendingText, decimalPlaces: 0)).bold()
+                        //Text("\(spendingText)💰").bold()
                             .foregroundColor(.white)
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                             .font(.system(size: 15))
@@ -91,20 +97,19 @@ struct budgetCradView: View {
                         .foregroundColor(.white)
                         .font(.system(size: 13))
                     Spacer().frame(height: 20)
-                    Text("\(incomeText)")
+                    Text(formatDouble(incomeText, decimalPlaces: 0)).bold()
+                    //Text("\(incomeText)")
                         .foregroundColor(.white)
                         .font(.system(size: 12))
                 }
                 .padding(.leading,190)
                 .padding(.top,30)
                 Spacer()
-                
-                
             }
             
             
             //sad expretion:
-            else if saving < (incomeText * 0.20) && saving >= (incomeText * 0.10){
+            else if charctarState == "sad"{
                 Rectangle()
                     .frame(width: 331,height: 198).shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     .foregroundColor(.white)
@@ -123,7 +128,8 @@ struct budgetCradView: View {
                         .font(.system(size: 15))
                     VStack{
                         Spacer().frame(height: 20)
-                        Text("\(spendingText)💰").bold()
+                        Text(formatDouble(spendingText, decimalPlaces: 0)).bold()
+                       // Text("\(spendingText)💰").bold()
                         
                             .font(.title)
                             .font(.system(size: 15))
@@ -134,7 +140,8 @@ struct budgetCradView: View {
                     
                         .font(.system(size: 13))
                     Spacer().frame(height: 20)
-                    Text("\(incomeText)")
+                    Text(formatDouble(incomeText, decimalPlaces: 0)).bold()
+                   // Text("\(incomeText)")
                     
                         .font(.system(size: 12))
                 }
@@ -144,8 +151,8 @@ struct budgetCradView: View {
                 
             }
             
-           /* // angry expretion:
-            else if saving > (incomeText * 0.10) && saving > 0{
+           
+            else if charctarState == "angry" {
                 Rectangle()
                     .foregroundColor(.white)
                     .frame(width: 331,height: 198).shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
@@ -164,7 +171,8 @@ struct budgetCradView: View {
                         .font(.system(size: 15))
                     VStack{
                         Spacer().frame(height: 20)
-                        Text("\(spendingText)💰").bold()
+                        Text(formatDouble(spendingText, decimalPlaces: 0)).bold()
+                     //   Text("\(spendingText)💰").bold()
                             .foregroundColor(.white)
                             .font(.title)
                             .font(.system(size: 15))
@@ -175,15 +183,15 @@ struct budgetCradView: View {
                         .foregroundColor(.white)
                         .font(.system(size: 13))
                     Spacer().frame(height: 20)
-                    Text("\(incomeText)")
+                    Text(formatDouble(incomeText, decimalPlaces: 0)).bold()
+                    //Text("\(incomeText)")
                         .foregroundColor(.white)
                         .font(.system(size: 12))
                 }
                 .padding(.leading,190)
                 .padding(.top,30)
                 Spacer()
-            }*/
-            
+            }
             
             
             VStack{
@@ -191,7 +199,8 @@ struct budgetCradView: View {
                     .font(.system(size: 15))
                 VStack{
                     Spacer().frame(height: 20)
-                    Text("\(saving)").bold()
+                    Text(formatDouble(saving, decimalPlaces: 0)).bold()
+                    //Text("\(saving)").bold()
                         .font(.title)
                         .font(.system(size: 15))
                     Spacer().frame(height: 20)
@@ -201,9 +210,11 @@ struct budgetCradView: View {
                 //Text("\(stringGoal)")
                     .font(.system(size: 13))
                 Spacer().frame(height: 20)
-                Text("\(goalText)")
+                Text("\(stringGoal)").bold()
                     .font(.system(size: 12))
-                Spacer().frame(height:35)
+                Text(formatDouble(goalText, decimalPlaces: 0)).bold()
+                .font(.system(size: 10))
+                Spacer().frame(height:33)
                 
                 ZStack{
                     Image("talkFlow")
@@ -292,7 +303,7 @@ struct budgetCradView_Previews: PreviewProvider {
             goalText:.constant(0),   // Provide an initial value
             spendingText: .constant(0), // Use .constant to create a binding with an initial value
             saving:.constant(0),
-            stringGoal: .constant("")  )
+            stringGoal: .constant(""),charctarState:.constant("")  )
     }
 }
 

@@ -8,12 +8,36 @@
 import SwiftUI
 
 struct UserGoal: View {
-    @Binding var nameText :String
+    @State var nameText :String
     @State private var goalText = ""
     @State private var isButtonTapped = false
+    @State private var isBackTapped = false
     var body: some View {
                 ZStack(alignment: .bottom){
+                   
+                    VStack {
+                        Button(action: {
+                            // Use this to dismiss the current view and go back to the previous page
+                           // presentationMode.wrappedValue.dismiss()
+                            isBackTapped=true
+                            
+                           
                     
+                        }) {
+                            Image(systemName: "arrow.left.circle")
+                                .font(.system(size: 25))
+                                .foregroundColor(Color(hex:"02B78B"))
+                                 Text("السابق")
+                                .foregroundColor(Color(hex:"02B78B"))
+                                .font(.system(size: 18))
+                                .fullScreenCover(isPresented: $isBackTapped, content: {
+                                    UserName()
+                                })
+                            
+                        }
+                        .padding(.top, 15)
+                        .padding(.trailing,250)
+                    }
                     /*     VStack{
                      Image(systemName:"chevron.backward").imageScale(.large)
                      .foregroundColor(Color(hex:"#028175"))
@@ -24,11 +48,12 @@ struct UserGoal: View {
                     VStack{
                       //  Text ("\(incomeText)")
 
-                        Image("intro2")
+                        Image("salary")
                             .resizable()
                             .aspectRatio(contentMode:.fit)
                             .frame(width: 300,height: 300)
                             .padding(.bottom,350)
+                            .foregroundColor(Color(hex:"#028175"))
                     }
                     
                     
@@ -57,8 +82,9 @@ struct UserGoal: View {
                     
                     VStack{
                         Text(" اكتب لي قيمة هدفك عشان اساعدك توصل له")
-                            .font(.system(size: 14))
-                            .padding(.bottom,620)
+                            .font(.system(size: 13))
+                            .padding(.bottom,615)
+                            .bold()
                             .padding(.leading,10)
                             .foregroundColor(Color(hex:"#028175"))
                     }
@@ -86,7 +112,7 @@ struct UserGoal: View {
                             .frame(width: 330 ,height: 48)
                             .background(Color(hex:"02B78B"))
                             .cornerRadius(24)
-                            .padding(.bottom,50)
+                            .padding(.bottom,80)
                         
                          .fullScreenCover(isPresented: $isButtonTapped, content: {
                              UserSalary(goalText:Double(goalText) ?? 0.0 ,nameText: nameText)
@@ -105,6 +131,6 @@ struct  UserGoal_ViewTests: PreviewProvider {
     
 
     static var previews: some View {
-        UserGoal(nameText:$dummystringName)
+        UserGoal(nameText:dummystringName)
     }
 }

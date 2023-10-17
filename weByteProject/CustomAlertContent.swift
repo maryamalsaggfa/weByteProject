@@ -10,9 +10,11 @@ import SwiftUI
 struct CustomAlertContent: View {
     var incomeText = 0.0
     @State var goalText = 0.0
+   
    // @State var totalSpending = 0
     //var  spendingTextNew =
     @State var spendingText = 0.0
+    @State var coinPoistion = 450
    // var totalSpending: Int
     @State private  var expeness1 = ""
     @State public var expeness = 0.0
@@ -20,12 +22,18 @@ struct CustomAlertContent: View {
     @State private var isButtonTapped = false
     @State var stringGoal = ""
     @State var saving = 0.0
+    @State var  charctarState = ""
+    
+    // A function to format a double to a string with a specific number of decimal places
+        func formatDouble(_ value: Double, decimalPlaces: Int) -> String {
+            return String(format: "%.\(decimalPlaces)f", value)
+        }
     var body: some View {
         VStack {
-            Text("Savings Goal Calculator")
+            Text("آلة حساب المصروفات ")
                 .font(.largeTitle)
                 .padding()
-            TextField("enter expeness", text: $expeness1)
+            TextField("اضف مصروفاتك", text: $expeness1)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             Button(action:{
@@ -35,7 +43,7 @@ struct CustomAlertContent: View {
                // calculateSavingsGoal()
             }){
                 Text("\(spendingText)")
-                Text("save")
+                Text("اضافة")
                     .bold()
                     .foregroundColor(.white)
                     .frame(width: 355 ,height: 48)
@@ -43,8 +51,8 @@ struct CustomAlertContent: View {
                     .cornerRadius(24)
                 
             }
-            Button(action:{
-                calculatespending()
+          /*  Button(action:{
+               // calculatespending()
                 isButtonTapped = true
               
                // calculatespending()
@@ -57,10 +65,10 @@ struct CustomAlertContent: View {
                     .background(Color(hex:"02B78B"))
                     .cornerRadius(24)
                 
-            }
+            }*/
             
            .fullScreenCover(isPresented: $isButtonTapped, content: {
-               ContentView (incomeText: incomeText ,goalText: goalText ,spendingText: spendingText, saving: saving)
+               ContentView (incomeText: incomeText ,goalText: goalText ,spendingText: spendingText, saving: saving,stringGoal: stringGoal, charctarState: charctarState,coinPosition: coinPoistion)
             })
             
             
@@ -72,8 +80,24 @@ struct CustomAlertContent: View {
     private func calculateSavingsGoal() {
         expeness = Double(Int(expeness1) ?? 0)
         spendingText = spendingText + expeness
-        stringGoal = String(goalText)
+        stringGoal = String(formatDouble(goalText, decimalPlaces: 0))
         saving = incomeText-spendingText
+        spendingText = spendingText
+        
+        if saving >= (Double(incomeText) * (0.20)){
+            charctarState = "happy"
+            coinPoistion = 150
+        }else if saving > (incomeText * 0.10) && saving < (incomeText * 0.20) {
+            charctarState = "sad"
+           // charctarState = "angry"
+            coinPoistion = 300
+           
+        } else if saving <= (incomeText * 0.10) && saving != 0{
+            charctarState = "angry"
+            coinPoistion = 450
+        }else {
+            charctarState = ""
+        }
         //// تم الغاء حالات التحويل لانها استقبلتها رقم
    // guard let income = Int(incomeText),
    // let goal = Int(goalText)
@@ -90,9 +114,10 @@ struct CustomAlertContent: View {
     goalText -= saving
     //months += 1
     }
-        spendingText = spendingText
+        
     //goalReached = currentGoal <= 0
     }
+  
     }
 
 
