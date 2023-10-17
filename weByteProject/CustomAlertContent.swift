@@ -111,13 +111,13 @@ struct CustomAlertContent: View {
     //months = 0
         
     //var currentGoal = goalText
-        
+    /*
     while goalText > 0 {
      saving = incomeText-spendingText
     goalText -=  saving
     //months += 1
     }
-        
+      */
     //goalReached = currentGoal <= 0
     }
   
