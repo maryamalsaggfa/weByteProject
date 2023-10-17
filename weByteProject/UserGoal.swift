@@ -46,7 +46,10 @@ struct UserGoal: View {
                      } */
                     
                     VStack{
-                      //  Text ("\(incomeText)")
+                       Text (" اهلا ،\(nameText)")
+                            .padding(.leading,250)
+                            .foregroundColor(.black)
+                            .bold()
 
                         Image("salary")
                             .resizable()
