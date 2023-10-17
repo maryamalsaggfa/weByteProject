@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+   // var
     var incomeText = 0.0
     @State var goalText = 0.0
     @State var spendingText = 0.0
