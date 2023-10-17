@@ -23,7 +23,7 @@ struct ContentView: View {
             TabView{
                 budgetView(incomeText: incomeText ,goalText: $goalText ,spendingText:$spendingText, saving : $saving, stringGoal: $stringGoal,charctarState: $charctarState,coinPosition: $coinPosition)
                     .tabItem {
-                        Image(systemName: "mappin.and.ellipse")
+                        Image(systemName: "creditcard")
                         Text("مالية")
                            
                     }
